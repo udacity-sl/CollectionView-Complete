@@ -100,12 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				E832C1DB2159CABB00E6447A /* AppDelegate.swift */,
-				E832C1DF2159CABB00E6447A /* Main.storyboard */,
-				E832C1E22159CABC00E6447A /* Assets.xcassets */,
-				E832C1E42159CABC00E6447A /* LaunchScreen.storyboard */,
-				E832C1E72159CABC00E6447A /* Info.plist */,
 				3308CE1221ADEFC1001B7F5B /* PhotoViewController.swift */,
 				3308CE1421ADF5B5001B7F5B /* PhotoCollectionViewCell.swift */,
+				E832C1DF2159CABB00E6447A /* Main.storyboard */,
+				E832C1E42159CABC00E6447A /* LaunchScreen.storyboard */,
+				E832C1E22159CABC00E6447A /* Assets.xcassets */,
+				E832C1E72159CABC00E6447A /* Info.plist */,
 			);
 			path = newcollectionview;
 			sourceTree = "<group>";
