@@ -9,7 +9,13 @@ import UIKit
 class PhotoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     
-    var photos : [UIImage] = []
+    
+    
+    // TODO: access your shared model in AppDelegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    // NOT
+    // var products = (UIApplication.shared.delegate as! AppDelegate).products
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,16 +23,16 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func demoData()  {
+    func demoData() {
         
         //TODO: Fill photos array with UIImages
         
-        photos.append(#imageLiteral(resourceName: "bridge"))
-        photos.append(#imageLiteral(resourceName: "eiffel"))
-        photos.append(UIImage(named: "road")!)
-        photos.append(UIImage(named: "standing on the mountain")!)
-        photos.append(UIImage(named: "winter")!)
-        photos.append(UIImage(named: "waterfall")!)
+        appDelegate.photos.append(#imageLiteral(resourceName: "bridge"))
+        appDelegate.photos.append(#imageLiteral(resourceName: "eiffel"))
+        appDelegate.photos.append(UIImage(named: "road")!)
+        appDelegate.photos.append(UIImage(named: "standing on the mountain")!)
+        appDelegate.photos.append(UIImage(named: "winter")!)
+        appDelegate.photos.append(UIImage(named: "waterfall")!)
         
     }
     
@@ -34,7 +40,7 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //TODO: Return the number of items
-        return photos.count
+        return appDelegate.photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -44,7 +50,7 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCollectionViewCell
         
         
-        cell.Photo.image = photos [indexPath.row]
+        cell.Photo.image = appDelegate.photos[indexPath.row]
         
         
         return cell
